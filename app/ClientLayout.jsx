@@ -1,5 +1,5 @@
 "use client";
-import { LoaderProvider, useLoader } from '../context/LoaderContext';
+import { LoaderProvider, useLoader } from './context/LoaderContext';
 import { Providers } from "./providers";
 
 function LoaderOverlay() {
