@@ -17,11 +17,12 @@ model User {
 }
 
 model Playlist {
-  id     String @id @default(cuid())
-  name   String
-  userId String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  videos Video[] @relation("PlaylistToVideo")
+  id        String @id @default(cuid())
+  name      String
+  isPublic  Boolean
+  userId    String
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  videos    Video[] @relation("PlaylistToVideo")
 }
 
 model Video {
@@ -31,6 +32,7 @@ model Video {
   height         Int
   thumbnailUrl   String
   videoUrl       String
+  isPublic       Boolean
   uploaderId     String
   uploader       User       @relation(fields: [uploaderId], references: [id])
   playlists      Playlist[] @relation("PlaylistToVideo")

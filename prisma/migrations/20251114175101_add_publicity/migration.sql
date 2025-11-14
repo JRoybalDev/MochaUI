@@ -12,6 +12,7 @@ CREATE TABLE "User" (
 CREATE TABLE "Playlist" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
+    "isPublic" BOOLEAN NOT NULL,
     "userId" TEXT NOT NULL,
 
     CONSTRAINT "Playlist_pkey" PRIMARY KEY ("id")
@@ -25,6 +26,7 @@ CREATE TABLE "Video" (
     "height" INTEGER NOT NULL,
     "thumbnailUrl" TEXT NOT NULL,
     "videoUrl" TEXT NOT NULL,
+    "isPublic" BOOLEAN NOT NULL,
     "uploaderId" TEXT NOT NULL,
 
     CONSTRAINT "Video_pkey" PRIMARY KEY ("id")
